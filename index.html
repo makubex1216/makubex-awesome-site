@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8"> 
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Visual Verse - Web Design Principles</title>
+   <script>
+document.addEventListener("DOMContentLoaded", function () {
+alert("Welcome to my website!");
+});
+</script>
+
+   <style>
+      :root {
+         --dark-blue: #22456b;
+         --medium-blue: #1D3A5A;
+         --light-blue: #2A7D98;
+         --white: #ffffff;
+         --red: #FF4C4C;
+         --orange: #FFA500;
+      }
+
+      body {
+         font-family: 'Helvetica Neue', sans-serif;
+         line-height: 1.8;
+         margin: 0;
+         padding: 0;
+         background-color: #F8F9FA;
+         color: #212529;
+         padding-top: 80px;
+      }
+
+      aside ul li a:link {
+         color: var(--blue);
+         text-decoration: none;
+         transition: color 0.3s, transform 0.2s;
+      }
+
+      aside ul li a:visited {
+         color: var(--orange);
+         text-decoration: underline;
+      }
+
+      aside ul li a:hover {
+         color: var(--medium-blue); 
+         transform: scale(1.05);  
+      }
+
+      aside ul li a:focus {
+         outline: 3px solid var(--light-blue);  
+         background-color: var(--dark-blue);  
+         color: var(--white);  
+      }
+
+      aside ul li a:active {
+         color: var(--red);
+         transform: scale(1.1);  
+      }
+
+      .container {
+         display: grid;
+         grid-template-columns: 2fr 1fr;
+         gap: 20px;
+         padding: 20px;
+      }
+
+      header {
+         background: var(--medium-blue);
+         padding: 20px;
+         text-align: center;
+         color: var(--white);
+         font-size: 24px;
+         position: sticky;
+         top: 0;
+         z-index: 1000;
+         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      nav {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         background: var(--light-blue);
+         padding: 15px 10px;
+         position: fixed;
+         top: 0;
+         width: 100%;
+         z-index: 1000;
+         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      nav a {
+         color: var(--white);
+         text-decoration: none;
+         margin: 0 15px;
+         font-size: 18px;
+         padding: 10px 15px;
+         transition: background 0.3s, color 0.3s, transform 0.2s;
+      }
+
+      nav a:hover {
+         background-color: #6C757D;
+         border-radius: 5px;
+         color: #F8F9FA;
+         transform: scale(1.1);
+      }
+
+      main {
+         background: var(--white);
+         color: var(--dark-blue);
+         padding: 20px;
+         border-radius: 8px;
+         border: 3px solid #ADB5BD;
+         box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      aside {
+         background: var(--dark-blue);
+         color: var(--white);
+         padding: 20px;
+         border-radius: 8px;
+         border: 3px solid #6C757D;
+         box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+         position: sticky;
+         top: 100px;
+      }
+
+      footer {
+         background: var(--dark-blue);
+         color: var(--white);
+         text-align: center;
+         padding: 15px;
+         margin-top: 20px;
+         font-weight: bold;
+         box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      article {
+         padding-bottom: 20px;
+         border-bottom: 1px solid #DDD;
+      }
+
+      article a {
+         color: #495057;
+         text-decoration: none;
+         font-weight: bold;
+         transition: color 0.3s;
+         cursor: pointer;
+      }
+
+      article a:hover {
+         color: #212529;
+      }
+
+      @media (max-width: 768px) {
+         .container {
+            grid-template-columns: 1fr;
+         }
+         nav {
+            flex-direction: column;
+            text-align: center;
+         }
+         nav a {
+            margin: 5px 0;
+         }
+      }
+   </style>
+   <script>
+      function toggleReadMore(id, link) {
+         const extraContent = document.getElementById(id);
+         const isHidden = extraContent.style.display === "none" || extraContent.style.display === "";
+         extraContent.style.display = isHidden ? "inline" : "none";
+         link.textContent = isHidden ? "Read Less" : "Read More";
+      }
+   </script>
+</head>
+<body>
+   <header>
+      <h1>Visual Verse - Web Design Guide</h1>
+      <p>Your expert guide to modern web design</p>
+   </header>
+   <nav>
+      <a href="#">Home</a>
+      <a href="About us.html">About us</a>
+      <a href="activity1.html">Dashboard</a>
+      <a href="Gallery.html">Gallery</a>
+      <a href="Contact.html">Contact</a>
+   </nav>
+   <div class="container">
+      <main>
+         <h2>Latest Blog Posts</h2>
+         <article>
+            <h3>The Power of Micro-Interactions</h3>
+            <p>
+               Micro-interactions significantly impact user experience, from liking a post to toggling a setting. 
+               <span id="more1" style="display: none;">
+               They provide immediate feedback and create intuitive, satisfying interactions. For example, a button changing color when clicked informs the user that their action has registered. These micro-details build emotional engagement and usability. Designers must carefully time animations, sounds, and feedback loops to maximize impact without distraction.
+               </span>
+            </p>
+            <a onclick="toggleReadMore('more1', this)">Read More</a>
+         </article>
+         <article>
+            <h3>Beyond the Homepage</h3>
+            <p>
+               A well-crafted landing page can significantly boost effectiveness. It’s not just the homepage that matters.
+               <span id="more2" style="display: none;">
+               Every page should have a clear purpose, strong call-to-action, and be optimized for user goals. Focusing on subpages—like pricing, features, and about sections—can enhance credibility and conversions. Remember, users often land directly on these inner pages from search engines, not just the front page.
+               </span>
+            </p>
+            <a onclick="toggleReadMore('more2', this)">Read More</a>
+         </article>
+      </main>
+      <aside>
+         <h2>About Me</h2>
+         <p>Hello! I'm a web designer passionate about UX and UI principles.</p>
+         <h3>Popular Topics</h3>
+         <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/The_web_standards_model" target="_blank">Website Accessibility Best Practices</a></li>
+            <li><a href="https://duck.design/brand-design/" target="_blank">Building a Brand Through Web Design</a></li>
+            <li><a href="https://webflow.com/blog/web-design-tools?msockid=334d8f7ad28460343b6b9abed319612d" target="_blank">Web Design Tools Every Designer Needs</a></li>
+            <li><a href="https://www.orbitmedia.com/blog/web-design-tips/" target="_blank">Web Design Tips</a></li>
+            <li><a href="https://www.orbitmedia.com/blog/web-design-tips/" target="_blank">Best Examples of Designs</a></li>
+         </ul>
+      </aside>
+   </div>
+   <footer>
+      &copy; 2024 Visual Verse. All rights reserved.
+   </footer>
+</body>
+</html>

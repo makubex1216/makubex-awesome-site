@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        :root {
+            --primary-color: #1a374d;
+            --secondary-color: #406882;
+            --accent-color: #6998ab;
+            --light-color: #f1f6f9;
+            --text-color: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: var(--light-color);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: var(--secondary-color);
+            color: var(--text-color);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .sidebar a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background: var(--accent-color);
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            gap: 30px;
+            padding: 30px;
+            background: var(--text-color);
+            color: var(--primary-color);
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-content {
+            flex: 2;
+        }
+
+        .text-content h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .text-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .image-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-content img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .main-content {
+                flex-direction: column;
+            }
+
+            .image-content {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">About Us</div>
+    <div class="container">
+        <div class="sidebar">
+            <p>Sidebar Menu</p>
+            <a href="index.html">Home</a>
+			<a href="activity1.html">Dashboard</a>
+            <a href="#">About Us</a>
+            <a href="Gallery.html">Gallery</a>
+            <a href="Contact.html">Contact</a>
+        </div>
+        <div class="main-content">
+            <div class="text-content">
+                <h1>Who We Are</h1>
+                <p>We are a passionate team dedicated to delivering high-quality solutions in design, development, and innovation. Our mission is to empower individuals and organizations through thoughtful technology and creative problem-solving.</p>
+
+                <h1>Our Vision</h1>
+                <p>To become a leading provider of digital excellence that drives positive change and lasting impact in communities and industries worldwide.</p>
+
+                <h1>Our Team</h1>
+                <p>Composed of developers, designers, and strategists, our team thrives on collaboration and a shared commitment to excellence, innovation, and integrity.</p>
+
+                <h1>What We Do</h1>
+                <p>We specialize in web development, UI/UX design, digital strategy, and educational tools that support both students and professionals in achieving their goals.</p>
+            </div>
+            <div class="image-content">
+                <img src="about me.jpeg.jpg" alt="About Us Image">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
